@@ -5,6 +5,8 @@ import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
+import javafx.scene.control.MenuItem;
+import javafx.scene.control.SeparatorMenuItem;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
@@ -32,11 +34,20 @@ public class gifApplication extends Application {
 		
 		//creating the above menu 
 		MenuBar menuBar = new MenuBar();
-		Menu save = new Menu("Save");
-		Menu about = new Menu("About");
-		menuBar.getMenus().addAll(save,about);
-		VBox topMenu = new VBox();
-		topMenu.getChildren().add(menuBar);
+		
+		
+		Menu menu = new Menu("Options");
+		MenuItem menuItem1 = new MenuItem("Save GIF");
+		MenuItem menuItem2 = new MenuItem("About");
+		SeparatorMenuItem separator = new SeparatorMenuItem();
+
+
+		menu.getItems().add(menuItem1);
+		menu.getItems().add(separator);
+		menu.getItems().add(menuItem2);
+
+		menuBar.getMenus().add(menu);
+		menuItem2.setOnAction(new AboutHandler(new PopAbout()));//opens up a about me pop up 
 		gm.setTop(menuBar);
 		
 		//create the center 
