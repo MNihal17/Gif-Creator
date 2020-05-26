@@ -1,5 +1,7 @@
 /ca/
 /gif_maker/
 /.DS_Store
+.settings/
 .classpath
 .project
+*.class
