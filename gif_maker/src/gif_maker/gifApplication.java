@@ -1,5 +1,7 @@
 package gif_maker;
 import java.io.File;
+import java.io.FileInputStream;
+
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -38,16 +40,21 @@ public class gifApplication extends Application {
 		
 		Menu menu = new Menu("Options");
 		MenuItem menuItem1 = new MenuItem("Save GIF");
+		MenuItem menuItem3 = new MenuItem("Create NEW GIF");
 		MenuItem menuItem2 = new MenuItem("About");
 		SeparatorMenuItem separator = new SeparatorMenuItem();
+		SeparatorMenuItem separator1 = new SeparatorMenuItem();
 
 
-		menu.getItems().add(menuItem1);
+		menu.getItems().add(menuItem3);
 		menu.getItems().add(separator);
+		menu.getItems().add(menuItem1);
+		menu.getItems().add(separator1);
 		menu.getItems().add(menuItem2);
 
 		menuBar.getMenus().add(menu);
 		menuItem2.setOnAction(new AboutHandler(new PopAbout()));//opens up a about me pop up 
+		menuItem3.setOnAction(new CreateGifHandler());
 		gm.setTop(menuBar);
 		
 		//create the center 
