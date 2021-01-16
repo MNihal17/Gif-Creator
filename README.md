@@ -4,5 +4,4 @@ Plans/ Features for the gif creator
 * Be able to set fps 0_0   individually for each pic?????->speed ( frames per sec)
 * Load in multiple images at once
 * Reorder pics (like drag n drop)
-* Live preview……….
-* Love :)
+* Live preview
